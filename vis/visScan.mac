@@ -1,0 +1,55 @@
+/ExpHall/X_length 2. m
+/ExpHall/Y_length 2. m
+/ExpHall/Z_length 2. m
+# Detector parameters ==========================================================
+/Gretina/NoDetectors
+/ScanningTable/CADModelPath ./cadModels
+/ScanningTable/IncludeCartFrame
+/ScanningTable/IncludeSlitMount
+/ScanningTable/IncludeCollimator
+/ScanningTable/IncludeCollimatorInsert
+/ScanningTable/IncludeCollimatorMount
+/ScanningTable/SetCollimatorRadius 2. mm
+/ScanningTable/SetXShift 12. mm
+/ScanningTable/SetYShift 12. mm
+/ScanningTable/SetZShift 100. mm
+/Gretina/update
+# Source parameters ============================================================
+/Experiment/RunSource
+/Experiment/Source/Set cs137
+/Experiment/Source/setX 12. mm
+/Experiment/Source/setY 200. mm
+/Experiment/Source/setZ 12. mm
+/Experiment/Source/setR 1.0 mm
+/Experiment/Source/CollimationDirection 0 1 0
+/Experiment/Source/CollimationAngle 15 deg
+# Print simulation parameters to stdout ========================================
+/ExpHall/Report
+
+#start visualizer
+#/vis/open OGLIX
+/vis/open VRML2FILE
+
+# Disable auto refresh and quieten vis messages while scene and
+#   trajectories are established 
+/vis/viewer/set/autoRefresh false
+/vis/verbose errors
+
+# setup viewer
+/vis/drawVolume
+/vis/viewer/set/style surface
+/vis/viewer/set/hiddenEdge
+#/vis/scene/add/axes 
+/vis/scene/add/trajectories
+#/vis/scene/add/hits
+/vis/scene/endOfEventAction accumulate 
+
+# set viewing angle and zoom
+/vis/viewer/set/viewpointThetaPhi 150 20
+/vis/viewer/zoom 4
+
+# Re-establish auto refreshing and verbosity
+/vis/viewer/set/autoRefresh true
+/vis/verbose warnings
+
+/run/beamOn 500

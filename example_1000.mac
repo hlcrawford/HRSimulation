@@ -1,0 +1,21 @@
+# Detector parameters ==========================================================
+/Target/Construct
+/HRArray/update
+# Set reaction parameters ======================================================
+/Experiment/RunSource
+/Experiment/Source/Set simple
+/Experiment/Source/setEnergy 500. keV
+/Experiment/Source/CollimationDirection 0 1 0
+/Experiment/Source/CollimationAngle 180 deg
+# Print simulation parameters to stdout ========================================
+/BeamIn/Report
+/BeamOut/Report
+/Target/Report
+/ExpHall/Report
+# Tracking parameters ==========================================================
+#/GammaPrint/Track_Set
+#/IonPrint/Track_Set
+# Output parameters ============================================================
+/Mode2/crystalXforms
+/Output/Filename testFile.dat
+/run/beamOn 5000

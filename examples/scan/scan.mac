@@ -1,0 +1,33 @@
+/ExpHall/X_length 2. m
+/ExpHall/Y_length 2. m
+/ExpHall/Z_length 2. m
+# Detector parameters ==========================================================
+/Gretina/NoDetectors
+/ScanningTable/CADModelPath ./cadModels
+/ScanningTable/IncludeCartFrame
+/ScanningTable/IncludeSlitMount
+#/ScanningTable/IncludeCollimator
+#/ScanningTable/IncludeCollimatorInsert
+/ScanningTable/IncludeCollimatorMount
+#/ScanningTable/SetCollimatorRadius 0.5 mm
+/ScanningTable/SetXShift 0. mm
+/ScanningTable/SetYShift 0. mm
+/ScanningTable/SetZShift 100. mm
+/Gretina/update
+# Source parameters ============================================================
+/Experiment/RunSource
+/Experiment/Source/Set co60
+/Experiment/Source/setX 0. mm
+/Experiment/Source/setY 176. mm
+/Experiment/Source/setZ 24. mm
+/Experiment/Source/setR 1.0 mm
+/Experiment/Source/CollimationDirection 0 1 0
+/Experiment/Source/CollimationAngle 90 deg
+# Print simulation parameters to stdout ========================================
+/ExpHall/Report
+# Output parameters ============================================================
+/Mode2/crystalXforms
+#/Mode2/GretinaCoords
+/Mode2/Filename /Volumes/Disk/FloodCo-Front-100M.dat
+#/Output/Filename scan.out
+/run/beamOn 100000000
